@@ -6,6 +6,7 @@ import config
 import web
 import os
 import fnmatch
+import re
 
 urls = ("/sha/(\w+)", "FetchController")
 
@@ -29,6 +30,10 @@ class FetchController:
 		return None
 	
 	def __load_log(self, sha):
+		# check sha
+		if re.match("\w+$", sha) is None:
+			return None
+
 		git = GitEngine()
 		git.fetch(origin, "origin")
 		git.checkout(sha)
