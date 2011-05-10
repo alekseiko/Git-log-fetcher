@@ -1,0 +1,4 @@
+#Git config
+repo_dir = "<repo-path>" 
+origin = "<origin-url>"
+file_pattern = "<log-file-pattern>"
